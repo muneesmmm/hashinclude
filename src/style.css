@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+
+/* Webfont: Retake-Regular */
+@font-face {
+  font-family: 'Retake';
+  src: url('assets/fonts/Retake.eot');
+  /* IE9 Compat Modes */
+  src: url('assets/fonts/Retake.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('assets/fonts/Retake.woff') format('woff'),
+    /* Modern Browsers */
+    url('assets/fonts/Retake.woff2') format('woff2'),
+    /* Modern Browsers */
+    url('assets/fonts/Retake.ttf') format('truetype');
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@tailwind base;
+
+@layer base {
+  html {
+    @apply text-surface;
+    @apply bg-white;
+  }
+
+  html.dark {
+    @apply text-neutral-50;
+    @apply bg-body-dark;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+p {
+  @apply leading-[1.6];
+}
+
+body {
+  background: #140730;
+}
+
+.header-text {
+  font-family: 'Retake', sans-serif;
+  ;
+}
+
+.btn {
+  --border-color: linear-gradient(-45deg, #C327BC, #333CF0, #00FAFE);
+  --border-width: 0.125em;
+  --curve-size: 1em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;  
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 20px; /* Adjust the border-radius as per your requirement */
+  clip-path: polygon(20% 0%, 80% 0%, 100% 60%, 80% 100%, 0% 100%);
+  transition: color 250ms;
+}
+
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+.topleftmask {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.banner-img {
+  position: absolute;
+  right: 0;
+  /* height: 100%;
+  width: 100%; */
+}
+
+.border-gradient {
+  border-image: linear-gradient(to bottom, #C327BC, #333CF0, #00FAFE);
+  /* Change colors as needed */
+  border-image-slice: 1;
+}
+
+.hr-gradient {
+  border-image: linear-gradient(to right, #C327BC, #333CF0, #00FAFE);
+  /* Change colors as needed */
+  border-image-slice: 1;
+}
+
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(22% 2%,
+  78% 2%,
+  98% 58%,
+  78% 98%,
+  2% 97%);
+  transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+      /* Top-left */
+      calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      calc(100% - var(--border-width)) var(--border-width),
+      /* top-right */
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+      /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+  transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+  color: #fff;
+}
+.box2
+{
+    width: 150px;
+    background-color: #242424;
+    height: 50px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 60%, 80% 100%, 0% 100%);
+
+}
+
+.flt_svg {
+    visibility: hidden; 
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+
+.box_parent
+{
+    filter: url('#flt_tag');
+}

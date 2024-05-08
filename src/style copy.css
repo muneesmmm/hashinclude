@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+
+/* Webfont: Retake-Regular */
+@font-face {
+  font-family: 'Retake';
+  src: url('assets/fonts/Retake.eot');
+  /* IE9 Compat Modes */
+  src: url('assets/fonts/Retake.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('assets/fonts/Retake.woff') format('woff'),
+    /* Modern Browsers */
+    url('assets/fonts/Retake.woff2') format('woff2'),
+    /* Modern Browsers */
+    url('assets/fonts/Retake.ttf') format('truetype');
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@tailwind base;
+
+@layer base {
+  html {
+    @apply text-surface;
+    @apply bg-white;
+  }
+
+  html.dark {
+    @apply text-neutral-50;
+    @apply bg-body-dark;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+p {
+  @apply leading-[1.6];
+}
+
+body {
+  background: #140730;
+}
+
+.header-text {
+  font-family: 'Retake', sans-serif;
+  ;
+}
+
+.btn {
+  --border-color: linear-gradient(-45deg, #C327BC, #333CF0, #00FAFE);
+  --border-width: 0.125em;
+  --curve-size: 1em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  /* Adjust the border-radius as per your requirement */
+  clip-path: polygon(20% 0%, 80% 0%, 100% 60%, 80% 100%, 0% 100%);
+  transition: color 250ms;
+}
+
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+main {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+header {
+  min-height: 100vh;
+  position: relative;
+}
+
+.relative {
+  position: relative;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.navbar {
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+
+.topleftmask {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.banner-img {
+  position: absolute;
+  right: 0;
+  /* height: 100%;
+  width: 100%; */
+}
+
+.border-gradient {
+  border-image: linear-gradient(to bottom, #C327BC, #333CF0, #00FAFE);
+  /* Change colors as needed */
+  border-image-slice: 1;
+}
+
+.hr-gradient {
+  border-image: linear-gradient(to right, #C327BC, #333CF0, #00FAFE);
+  /* Change colors as needed */
+  border-image-slice: 1;
+}
+
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(22% 2%,
+      78% 2%,
+      98% 58%,
+      78% 98%,
+      2% 97%);
+  transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+      /* Top-left */
+      calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      calc(100% - var(--border-width)) var(--border-width),
+      /* top-right */
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+      /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+  transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+  color: #fff;
+}
+
+.box2 {
+  width: 150px;
+  background-color: #242424;
+  height: 50px;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 60%, 80% 100%, 0% 100%);
+
+}
+
+.flt_svg {
+  visibility: hidden;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+
+.box_parent {
+  filter: url('#flt_tag');
+}
+
+.nav-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .nav-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .nav-content .toggle-btn-div {
+    display: none;
+  }
+
+  .nav-container .navlinks-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.nav-content {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.toggle-btn-div {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-btn-div button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  /* Adjust padding as needed */
+  border-radius: 0.375rem;
+  /* Adjust border radius as needed */
+  color: #718096;
+  /* Text color */
+  background-color: transparent;
+  /* Initial background color */
+  transition: background-color 0.3s, color 0.3s;
+  /* Smooth transition */
+}
+
+.toggle-btn-div button:hover {
+  background-color: #4a5568;
+  /* Hover background color */
+  color: #fff;
+  /* Hover text color */
+}
+
+.nav-container .navlinks-container {
+  display: flex;
+  flex: 1 1 0%;
+  align-items: center;
+  justify-content: space-between;
+}
