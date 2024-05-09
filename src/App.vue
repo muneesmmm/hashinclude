@@ -100,7 +100,7 @@
         </div>
       </div>
     </header>
-    <section class="min-h-screen flex justify-center items-center md:py-28 py-0">
+    <section class="min-h-screen flex justify-center items-center md:py-20 py-0">
       <div class="grid md:grid-cols-2 grid-cols-1">
         <div class="relative h-fit w-fit order-2 md:order-1">
           <img src="./assets/img/network.png" alt="" />
