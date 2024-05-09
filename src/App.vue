@@ -207,7 +207,7 @@
       class="relative bg-[url(./assets/img/footer-image.png)] bg-cover bg-center h-screen flex items-center justify-center">
       <div class="relative z-100 w-full justify-center items-center ">
         <!-- <img class=" h-full absolute w-full" src="./assets/img/footer-image.png" alt=""> -->
-        <div class="relative flex justify-center flex-col md:px-12 px-2">
+        <div class="relative flex justify-center flex-col md:px-12 px-3">
           <div class="uppercase header-text text-center">
             <span class="md:text-7xl text-4xl header-text text-white">Register</span><br />
             <span class="md:text-7xl text-4xl header-text text-white">your </span>
