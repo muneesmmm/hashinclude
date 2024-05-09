@@ -1,6 +1,6 @@
 <template>
   <main class="max-w-screen-2xl relative  text-center sm:text-start">
-    <header class="md:min-h-screen relative">
+    <header class="min-h-screen relative">
       <div>
         <nav class="relative z-50 backdrop-blur-xs">
           <div class="mx-auto px-2 sm:px-6 lg:px-20">
@@ -63,7 +63,7 @@
       <img class="topgradient absolute z-10 top-0 right-0" src="./assets/img/topgradient.png" alt="" />
       <img class="banner-img bottom-0 md:top-0" src="./assets/img/banner-img1.png" alt="" />
 
-      <div class="flex relative items-center py-20">
+      <div class="flex relative items-center py-20 min-h-screen">
         <div class=" px-3 md:px-28">
           <div class="flex flex-col">
             <span class="text-4xl md:text-7xl header-text text-white uppercase">Lorem ipsum</span>
@@ -207,14 +207,14 @@
       class="relative bg-[url(./assets/img/footer-image.png)] bg-cover bg-center h-screen flex items-center justify-center">
       <div class="relative z-100 w-full justify-center items-center ">
         <!-- <img class=" h-full absolute w-full" src="./assets/img/footer-image.png" alt=""> -->
-        <div class="relative flex justify-center flex-col">
+        <div class="relative flex justify-center flex-col md:px-12 px-2">
           <div class="uppercase header-text text-center">
-            <span class="text-6xl header-text text-white">Register</span><br />
-            <span class="text-6xl header-text text-white">your </span>
+            <span class="md:text-7xl text-4xl header-text text-white">Register</span><br />
+            <span class="md:text-7xl text-4xl header-text text-white">your </span>
             <span
-              class="header-text bg-gradient-to-r from-[#C327BC] via-[#333CF0] to-[#00FAFE] bg-clip-text text-transparent text-6xl">school
+              class="header-text bg-gradient-to-r from-[#C327BC] via-[#333CF0] to-[#00FAFE] bg-clip-text text-transparent md:text-7xl text-4xl">school
             </span>
-            <span class="text-6xl header-text text-white">Today</span>
+            <span class="md:text-7xl text-4xl header-text text-white">Today</span>
 
           </div>
           <p class="text-white text-center my-5">Create safety ambassadors for today & tomorrow.</p>
